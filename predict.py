@@ -1,3 +1,4 @@
+import os
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
@@ -5,7 +6,9 @@ from tensorflow.keras.preprocessing import image
 # -----------------------------
 # Load Trained Model
 # -----------------------------
-model = load_model("model/cnn_model.keras")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "model", "cnn_model.keras")
+model = load_model(MODEL_PATH)
 
 # -----------------------------
 # CIFAR-10 Class Names
